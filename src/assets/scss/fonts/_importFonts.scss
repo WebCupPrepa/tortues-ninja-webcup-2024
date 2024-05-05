@@ -1,0 +1,27 @@
+@mixin importFonts($font, $family-font) {
+  @each $font-weight, $font-path in $font {
+    $extension: to-lower-case(
+      str-slice($font-path, str-length($font-path) - 4, str-length($font-path))
+    );
+
+    // Détermination du format en fonction de l'extension
+    $format: if(
+      $extension == ".ttf",
+      "truetype",
+      if(
+        $extension == ".woff",
+        "woff",
+        if($extension == ".woff2", "woff2", if($extension == ".otf", "opentype", "unknown"))
+      )
+    );
+
+    @debug $font-weight;
+    @debug $font-path;
+    @font-face {
+      font-family: $family-font;
+      src: url($font-path) format($format);
+      font-weight: $font-weight;
+      font-style: normal;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.page-padding {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  width: 100%;
+
+  @include tablet {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @include mobileLarge {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+
+  &--xs {
+    max-width: 600px;
+  }
+
+  &--sm {
+    max-width: 990px;
+  }
+
+  &--lg {
+    max-width: 1500px;
+  }
+}

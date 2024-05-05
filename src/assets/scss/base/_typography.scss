@@ -1,0 +1,86 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--primary-font);
+}
+
+// for h1,h2,h3
+$line-height-small: 1.25;
+
+// for h4, h5, h6, p
+$line-height-big: 1.5;
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+  font-weight: 800;
+  line-height: $line-height-small;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: $line-height-small;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: $line-height-small;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: $line-height-big;
+}
+
+/* H5 */
+h5 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: $line-height-big;
+}
+
+/* H6 */
+h6 {
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  line-height: $line-height-big;
+}
+
+p {
+  font-family: var(--secondary-font);
+  line-height: $line-height-big;
+  color: var(--text-color-secondary);
+}
+
+@include tablet() {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+  }
+
+  h5 {
+    font-size: 1.2rem;
+  }
+
+  h6 {
+    font-size: 1.1rem;
+  }
+}

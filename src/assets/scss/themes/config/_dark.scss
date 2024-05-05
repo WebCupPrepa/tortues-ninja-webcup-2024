@@ -1,0 +1,63 @@
+@import "./generator";
+@import "./colors";
+
+$color-scheme: dark;
+
+// FOR surface
+
+// $surface-dark-nuances: (
+//   "0": (
+//     lightness: 7.5%,
+//     desaturation: 8%,
+//   ),
+//   "50": (
+//     lightness: 12%,
+//     desaturation: 11%,
+//   ),
+//   "100": (
+//     lightness: 10%,
+//     desaturation: 10%,
+//   ),
+//   "200": (
+//     lightness: 18%,
+//     desaturation: 10%,
+//   ),
+//   "300": (
+//     lightness: 30%,
+//     desaturation: 17%,
+//   ),
+//   "400": (
+//     lightness: 40%,
+//     desaturation: 22%,
+//   ),
+//   "500": (
+//     lightness: 50%,
+//     desaturation: 26%,
+//   ),
+//   "600": (
+//     lightness: 70%,
+//     desaturation: 20%,
+//   ),
+//   "700": (
+//     lightness: 80%,
+//     desaturation: 15%,
+//   ),
+//   "800": (
+//     lightness: 90%,
+//     desaturation: 5%,
+//   ),
+//   "900": (
+//     lightness: 95%,
+//     desaturation: 1%,
+//   ),
+// );
+
+[data-theme="dark"] {
+  @include generateLightNuances($colors, $nuances-light);
+  @include generateDarkNuances($colors, $nuances-dark);
+  @include generateOriginalNuances($colors, $nuance-original);
+  @include generateSurfacePalette($color-surface-dark, $surface-nuances, $color-scheme);
+
+  // DEFINE COLORS
+  --surface-a: black;
+}

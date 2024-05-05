@@ -1,0 +1,13 @@
+@import "./generator";
+@import "./colors";
+
+$color-scheme: light;
+
+[data-theme="light"] {
+  @include generateLightNuances($colors, $nuances-light);
+  @include generateDarkNuances($colors, $nuances-dark);
+  @include generateOriginalNuances($colors, $nuance-original);
+  @include generateSurfacePalette($color-surface-light, $surface-nuances, $color-scheme);
+
+  --surface-a: white;
+}

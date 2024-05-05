@@ -1,0 +1,49 @@
+// PRIMARY - Comfortaa
+@font-face {
+  font-family: "Comfortaa";
+  src: url("@/assets/fonts/primary/Comfortaa-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url("@/assets/fonts/primary/Comfortaa-Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url("@/assets/fonts/primary/Comfortaa-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url("@/assets/fonts/primary/Comfortaa-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+}
+
+// SECONDARY - Gluten
+
+@font-face {
+  font-family: "Gluten";
+  src: url("@/assets/fonts/secondary/Gluten-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Gluten";
+  src: url("@/assets/fonts/secondary/Gluten-Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Gluten";
+  src: url("@/assets/fonts/secondary/Gluten-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+:root {
+  --primary-font: "Gluten";
+  --secondary-font: "Comfortaa";
+}

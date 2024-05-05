@@ -1,0 +1,144 @@
+// FOR COLORS
+$nuances-light: (
+  "50": 45%,
+  "100": 40%,
+  "200": 30%,
+  "300": 20%,
+  "400": 10%,
+);
+
+$nuance-original: (
+  "500": 1,
+);
+
+$nuances-dark: (
+  "600": 15%,
+  "700": 28%,
+  "800": 35%,
+  "900": 45%,
+);
+
+// FOR surface
+
+$surface-nuances: (
+  "0": (
+    lightness: 2%,
+    desaturation: 1%,
+  ),
+  "50": (
+    lightness: 5%,
+    desaturation: 1%,
+  ),
+  "100": (
+    lightness: 10%,
+    desaturation: 10%,
+  ),
+  "200": (
+    lightness: 18%,
+    desaturation: 10%,
+  ),
+  "300": (
+    lightness: 30%,
+    desaturation: 17%,
+  ),
+  "400": (
+    lightness: 40%,
+    desaturation: 22%,
+  ),
+  "500": (
+    lightness: 50%,
+    desaturation: 26%,
+  ),
+  "600": (
+    lightness: 70%,
+    desaturation: 20%,
+  ),
+  "700": (
+    lightness: 80%,
+    desaturation: 15%,
+  ),
+  "800": (
+    lightness: 90%,
+    desaturation: 5%,
+  ),
+  "900": (
+    lightness: 95%,
+    desaturation: 1%,
+  ),
+);
+
+/* ___________ SURFACE  _____________*/
+
+// Générer la  palette surface et inverser les couleurs en fonction du thème
+@mixin generateSurfacePalette($colors, $nuances, $color-scheme) {
+  @each $color-name, $color-value in $colors {
+    @each $nuance, $adjustments in $nuances {
+      --#{$color-name}-#{$nuance}: #{traitementColor($color-value, $adjustments, $color-scheme)};
+    }
+  }
+}
+
+@function traitementColor($color, $adjustments, $color-scheme) {
+  // AJUSTEMENT DE LA COULEUR
+  $lightness-adjustment: map-get($adjustments, lightness);
+  $desaturation-adjustment: map-get($adjustments, desaturation);
+
+  // THEME LIGHT OU DARK
+  @if ($color-scheme == "light") {
+    @return lightSurfaceColor($color, $lightness-adjustment, $desaturation-adjustment);
+  } @else {
+    @return darkSurfaceColor($color, $lightness-adjustment, $desaturation-adjustment);
+  }
+}
+
+// ADJUST SURFACE FOR LIGHT THEME
+@function lightSurfaceColor($color, $lightness-adjustment, $desaturation-adjustment) {
+  // Ajuster directement la couleur en assombrissant et en désaturant
+  @return adjust-color(
+    $color,
+    $lightness: -$lightness-adjustment,
+    $saturation: -$desaturation-adjustment
+  );
+}
+
+// ADJUST SURFACE FOR DARK THEME
+@function darkSurfaceColor($color, $lightness-adjustment, $desaturation-adjustment) {
+  // Ajuster directement la couleur en éclaircissant et en désaturant
+  @return adjust-color(
+    $color,
+    $lightness: $lightness-adjustment,
+    $saturation: -$desaturation-adjustment
+  );
+}
+
+/* ___________ COLORS _____________*/
+
+// Générer nuance 500 qui correspond couleur original
+
+@mixin generateOriginalNuances($colors, $nuances) {
+  @each $color-name, $color-value in $colors {
+    @each $nuance, $opacity in $nuances {
+      --#{$color-name}-#{$nuance}: #{rgba($color-value, $opacity)};
+    }
+  }
+}
+
+// En dessous de 500 éclaircir
+
+@mixin generateLightNuances($colors, $nuances) {
+  @each $color-name, $color-value in $colors {
+    @each $nuance, $opacity in $nuances {
+      --#{$color-name}-#{$nuance}: #{lighten($color-value, $opacity)};
+    }
+  }
+}
+
+// Au dessus de 500 assombrir
+
+@mixin generateDarkNuances($colors, $nuances) {
+  @each $color-name, $color-value in $colors {
+    @each $nuance, $opacity in $nuances {
+      --#{$color-name}-#{$nuance}: #{darken($color-value, $opacity)};
+    }
+  }
+}

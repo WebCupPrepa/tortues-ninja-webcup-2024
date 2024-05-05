@@ -1,0 +1,57 @@
+// VARIABLES
+$padding-input: 0.6rem 0.8rem;
+$mode: "border";
+
+// RESET
+input,
+textarea,
+select {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  border-radius: var(--border-radius-secondary);
+  color: var(--surface-900);
+  min-height: 40px;
+}
+
+// INPUT TYPE TEXT LONG
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+textarea,
+select {
+  padding: $padding-input;
+
+  @if ($mode == "border") {
+    background-color: var(--surface-a);
+    border: solid 1px var(--surface-200);
+
+    &:hover {
+      border-color: var(--surface-300);
+    }
+    &:focus {
+      border-color: var(--primary-color);
+    }
+    //
+  } @else if ($mode == "filled") {
+    background-color: var(--surface-100);
+    border: solid 1px var(--surface-300);
+
+    &:hover {
+      background-color: var(--surface-200);
+    }
+    &:focus {
+      border-color: var(--primary-color);
+    }
+  }
+}
+
+// INPUT SUBMIT
+
+input[type="submit"] {
+  width: 100%;
+  @extend .btn;
+  @extend .btn--primary;
+}

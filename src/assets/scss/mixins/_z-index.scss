@@ -1,0 +1,23 @@
+$z-index-map: (
+  "base": 0,
+  "navbar": 900,
+  "overlay": 1100,
+  "modal": 1200,
+  "toast": 1300,
+  "max": 9999,
+);
+
+$position-adjustement-map: (
+  "behind": -1,
+  "front": 1,
+);
+
+@mixin zIndex($z-index-key, $position-key: null) {
+  $output-index: map-get($z-index-map, $z-index-key);
+
+  @if map-has-key($position-adjustement-map, $position-key) {
+    $output-index: $output-index + map-get($position-adjustement-map, $position-key);
+  }
+
+  z-index: $output-index;
+}

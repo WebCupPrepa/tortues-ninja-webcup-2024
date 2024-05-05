@@ -1,0 +1,40 @@
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+/* MARGIN */
+
+@mixin createMarginBottom() {
+  $base: 0.25rem;
+  $nb-class: 5;
+
+  @for $i from 1 through $nb-class {
+    .mb-#{$i} {
+      margin-bottom: $i * $base;
+    }
+  }
+}
+
+@include createMarginBottom();
+
+.mt-guest {
+  padding-top: $navbar-height + 1rem;
+}
+
+@include tablet {
+  .mt-guest {
+    padding-top: $navbar-height-mobile + 1rem;
+  }
+}

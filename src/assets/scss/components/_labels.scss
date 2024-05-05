@@ -1,0 +1,21 @@
+.label {
+  display: inline-block;
+  color: var(--text-color-secondary);
+
+  &--text {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.7;
+    display: inline-block;
+    color: var(--text-color-secondary);
+  }
+
+  &--input {
+    font-size: 0.875rem;
+    font-family: var(--secondary-font);
+    line-height: $line-height-big;
+    margin-bottom: 0.3rem;
+    color: var(--surface-600);
+    display: block;
+  }
+}

@@ -1,0 +1,19 @@
+.toggle {
+  padding: 0.35rem;
+  aspect-ratio: 1/1;
+  height: 2rem;
+  border-radius: var(--border-radius);
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  cursor: pointer;
+  transition: var(--transition-duration);
+  border: solid 1px transparent;
+  opacity: 0.8;
+
+  &:hover {
+    background-color: var(--surface-hover);
+    border-color: var(--surface-border);
+    opacity: 1;
+  }
+}

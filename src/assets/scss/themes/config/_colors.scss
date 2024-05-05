@@ -1,0 +1,36 @@
+// Use color with 50% lightness for good variations
+
+$colors: (
+  "primary": #44c281,
+  "secondary": #922d50,
+  "blue": #0077ff,
+  "green": #40bf82,
+  "yellow": #eab308,
+  "cyan": #06b6d4,
+  "pink": #ec4899,
+  "indigo": #1519ea,
+  "teal": #20c997,
+  "orange": #f97316,
+  "bluegray": #64748b,
+  "purple": #a855f7,
+  "red": #de2121,
+  "gray": #9e9e9e,
+);
+
+// USE HSL FOR SURFACE
+// Teinte, saturation, luminosité
+
+$hue-default-surface: 28;
+$saturation-default-surface: 50%;
+
+/* LIGHT */
+$Lightness-default-light: 100%; // garder 100% pour une couleur pur de base
+$color-surface-light: (
+  "surface": hsl($hue-default-surface, $saturation-default-surface, $Lightness-default-light),
+);
+
+/* DARK */
+$Lightness-default-dark: 0%; // garder 0% pour un noir pur de base
+$color-surface-dark: (
+  "surface": hsl($hue-default-surface, $saturation-default-surface, $Lightness-default-dark),
+);

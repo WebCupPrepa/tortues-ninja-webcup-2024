@@ -1,0 +1,21 @@
+a {
+  color: inherit;
+  transition: var(--transition-duration) ease;
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+
+.router-link-active.router-link-exact-active {
+  * {
+    color: var(--primary-color) !important;
+  }
+}
+
+[data-theme="light"] {
+  .router-link-active.router-link-exact-active {
+    * {
+      color: var(--primary-600) !important;
+    }
+  }
+}

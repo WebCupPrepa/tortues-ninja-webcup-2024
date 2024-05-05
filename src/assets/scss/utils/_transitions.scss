@@ -1,0 +1,79 @@
+/* OPACITY */
+.opacity-enter-active,
+.opacity-leave-active {
+  transition: 0.5s ease;
+}
+
+.opacity-enter-from,
+.opacity-leave-to {
+  opacity: 0;
+}
+
+/* SLIDE DOWN */
+
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: 0.3s ease;
+}
+
+.slide-down-enter-from,
+.slide-down-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+/* SLIDE right */
+
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: 0.3s ease;
+}
+
+.slide-right-enter-from,
+.slide-right-leave-to {
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+/* POPUP  */
+
+.popup-enter-active,
+.popup-leave-active {
+  transition: 0.2s ease-out;
+}
+
+.popup-enter-from,
+.popup-leave-to {
+  transform: scale(0.1);
+  opacity: 0.1;
+}
+
+/* MENU MOBILE */
+
+.menu-enter-from,
+.menu-leave-to {
+  transform: translateY(-100vh);
+}
+
+.menu-enter-to,
+.menu-leave-from {
+  transform: translateY(0);
+}
+
+/* Transition commune pour l'entrée et la sortie */
+.menu-enter-active,
+.menu-leave-active {
+  transition: all 0.5s ease-in-out;
+}
+
+/* FADE router transition*/
+
+.route-enter-from,
+.route-leave-to {
+  opacity: 0;
+}
+
+.route-enter-active,
+.route.leave-active {
+  transition: 0.5s ease-out;
+}

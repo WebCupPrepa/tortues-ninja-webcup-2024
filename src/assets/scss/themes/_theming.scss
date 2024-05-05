@@ -1,0 +1,63 @@
+@import "./config/dark.scss";
+@import "./config/light.scss";
+
+:root {
+  --border-radius: 1rem;
+  --border-radius-secondary: 0.5rem;
+  --transition-duration: 0.3s;
+
+  /* TEXT VARIABLES*/
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+}
+
+[data-theme="light"] {
+  /* Couleurs de base */
+  --primary-color: var(--primary-500);
+  --secondary-color: var(--secondary-500);
+
+  /* Couleurs de texte */
+  --text-color: var(--surface-800);
+  --text-color-secondary: var(--surface-600);
+  --primary-color-text: white;
+  --secondary-color-text: white;
+
+  /* Surface */
+  --surface-ground: var(--surface-50);
+  --surface-section: var(--surface-a);
+  --surface-border: var(--surface-100);
+  --surface-card: var(--surface-a);
+  --surface-overlay: #363924b3;
+  --surface-hover: var(--surface-50);
+
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  /* Couleurs de base */
+  --primary-400: var(--red-500);
+  --primary-color: var(--red-400);
+  --secondary-color: var(--surface-800);
+
+  /* Couleurs de texte */
+  --text-color: var(--surface-900);
+  --text-color-secondary: var(--surface-600);
+  --primary-color-text: white;
+  --secondary-color-text: black;
+
+  /* Surface */
+  --surface-ground: var(--surface-100);
+  --surface-section: var(--surface-50);
+  --surface-border: var(--surface-200);
+  --surface-card: var(--surface-50);
+  --surface-overlay: #c6bec26d;
+  --surface-hover: var(--surface-200);
+
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--surface-ground);
+  color: var(--text-color);
+}
